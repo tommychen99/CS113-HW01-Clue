@@ -18,14 +18,14 @@ public class AssistantJackTest {
     /**
      *
      *  TESTING:
-     *  -   checkAnswer for set 1 (0, 0, 0)
+     *  -   checkAnswer for set 1 (1, 1, 1)
      *  -   checkAnswer for set 2 (6, 10, 6)
      *
      */
 
     @Test
     public void testCheckAnswerSet1() {
-        testCheckAnswer(1, 1, 1,1);
+        testCheckAnswer(1, 1, 1, 1);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class AssistantJackTest {
         testCheckAnswer(2, 6, 10, 6);
     }
 
-    //note there isn’t a “@Test” here! This is a helper for the above methods!!
+    //note there isn’t a "@Test" here! This is a helper for the above methods!!
     public void testCheckAnswer(int set, int w, int l, int m) {
         AssistantJack aj = new AssistantJack(set);
         Assert.assertTrue(aj.checkAnswer(w, l, m) == 0);
