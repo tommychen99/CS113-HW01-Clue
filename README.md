@@ -1,6 +1,8 @@
 # CS113-HW01-Clue
 ## HW #1 for CS113 - Detective Jill + Assistant Jack, Clue simulation
 
+[![Build Status](https://travis-ci.com/profe/CS113-HW01-Clue.svg?token=79PBopapWMemN2tzsJkL&branch=master)](https://travis-ci.com/profe/CS113-HW01-Clue)
+
 ***Dr. Foo has been murdered!*** Detective Jill must determine the murderer, crime scene, and weapon. There are six possible murders (numbered 1 through 6, Professor Plum to Mrs. Peacock), 10 locations (1 through 10, ballroom to cellar), and six weapons (1 through 6, lead pipe to spanner). Detective Jill tries to guess the correct combination. Each guess is a theory. She asks her assistant, Jack, to confirm or refute each theory.
 
 Use the files found in this repository to test your answer.  Inside you will find:
