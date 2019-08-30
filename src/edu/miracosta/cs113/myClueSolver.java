@@ -6,7 +6,20 @@ import java.util.Scanner;
 import model.Theory;
 import model.AssistantJack;
 
-
+/**
+ * myClueSolver.java : Your job is to ask your AssistantJack and get the correct
+ * answer in <= 20 tries.  RandomClue is ONE solution to the problem,
+ * where a set of random numbers is generated every attempt until all three
+ * random numbers match the solution from the AssistantJack object.
+ *
+ * This is a sample solution, a driver using random number implementation.
+ * You can use this file as a guide to create your own SEPARATE driver for
+ * your implementation that can solve it in <= 20 times consistently.
+ *
+ * @author Nery Chapeton-Lamas (material from Kevin Lewis)
+ * @version 1.0
+ *
+ */
 public class myClueSolver {
 
     /*
