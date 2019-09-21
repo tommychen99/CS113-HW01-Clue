@@ -19,6 +19,7 @@ import java.util.Random;
 import java.util.Scanner;
 import model.Theory;
 import model.AssistantJack;
+import java.util.ArrayList;
 
 public class RandomClue {
 
@@ -64,12 +65,109 @@ public class RandomClue {
         // PROCESSING
         jack = new AssistantJack(answerSet);
 
-        do {
-            weapon = random.nextInt(6) + 1;
-            location = random.nextInt(10) + 1;
-            murder = random.nextInt(6) + 1;
-            solution = jack.checkAnswer(weapon, location, murder);
-        } while (solution != 0);
+        do
+        {
+            weapon = 0;
+            location = 0;
+            murder = 0;
+            solution = 0;
+
+            ArrayList<Integer> weaponArr = new ArrayList<>();
+            ArrayList<Integer> locationArr = new ArrayList<>();
+            ArrayList<Integer> murderArr = new ArrayList<>();
+
+            for(int i = 0; i < 6; i++)
+            {
+                for(int j = 0; j < 10; j++)
+                {
+                    for(int k = 0; k < 6; k++)
+                    {
+                        weapon = i + 1;
+                        location = j + 1;
+                        murder = k + 1;
+
+                        if(weaponArr.contains(weapon))
+                        {
+                            for(int a = 1; a <= 6; a++)
+                            {
+                                if(!weaponArr.contains(a))
+                                {
+                                    weapon = a;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(locationArr.contains(location))
+                        {
+                            for(int a = 1; a <= 10; a++)
+                            {
+                                if(!locationArr.contains(a))
+                                {
+                                    location = a;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if(murderArr.contains(murder))
+                        {
+                            for(int a = 1; a <= 6; a++)
+                            {
+                                if(!murderArr.contains(a))
+                                {
+                                    murder = a;
+                                    break;
+                                }
+                            }
+                        }
+
+                        solution = jack.checkAnswer(weapon, location, murder);
+
+                        if(solution == 1)
+                        {
+                            if(!weaponArr.contains(weapon))
+                            {
+                                weaponArr.add(weapon);
+                            }
+                        }
+
+                        else if(solution == 2)
+                        {
+                            if(!locationArr.contains(location))
+                            {
+                                locationArr.add(location);
+                            }
+                        }
+
+                        else if(solution == 3)
+                        {
+                            if(!murderArr.contains(murder))
+                            {
+                                murderArr.add(murder);
+                            }
+                        }
+
+                        if(solution == 0)
+                        {
+                            break;
+                        }
+                    }
+
+                    if(solution == 0)
+                    {
+                        break;
+                    }
+                }
+
+                if(solution == 0)
+                {
+                    break;
+                }
+            }
+        }
+
+        while (solution != 0);
 
         answer = new Theory(weapon, location, murder);
 
